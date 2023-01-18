@@ -40,7 +40,7 @@ main {
   position: relative;
   width: 100rem;
   height: 60rem;
-  background-color: var(--secondary-bg-clr);
+  background: var(--secondary-bg-clr);
   backdrop-filter: blur(200px);
   filter: blur();
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
@@ -172,7 +172,7 @@ main {
   }
   
   .player-winner {
-    background-color: var(--winner-clr);
+    background: var(--winner-clr);
   }
   
   .player-winner .name {

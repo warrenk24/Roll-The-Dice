@@ -13,14 +13,15 @@ const btnRoll = document.querySelector('.btn-roll');
 const btnHold = document.querySelector('.btn-hold');
 
 //start conditions
-score0.textContent = 0;
-score1.textContent = 0;
-diceEl.classList.add('hidden')
+let playing, currentScore, activePlayer, scoreTracker;
+// score0.textContent = 0;
+// score1.textContent = 0;
+// diceEl.classList.add('hidden')
 
-let playing = true
-let currentScore = 0;
-let activePlayer = 0
-const scoreTracker = [0,0];
+// let playing = true
+// let currentScore = 0;
+// let activePlayer = 0;
+// const scoreTracker = [0,0];
 
 const switchPlayer = function(){
     document.getElementById(`current-${activePlayer}`).textContent = 0;
@@ -29,7 +30,23 @@ const switchPlayer = function(){
     player1.classList.toggle('player-active');
     player2.classList.toggle('player-active');
 }
-
+//init game
+const resetGame = function(){
+    diceEl.classList.add('hidden')
+    score0.textContent = 0;
+    score1.textContent = 0;
+    current0.textContent = 0;
+    current1.textContent = 0;
+    scoreTracker = [0,0];
+    playing = true
+    currentScore = 0;
+    activePlayer = 0;
+    player1.classList.remove('player-winner')
+    player2.classList.remove('player-winner')
+    player1.classList.add('player-active')
+    player2.classList.remove('player-active')
+}
+resetGame()
 
 //dice roll
 btnRoll.addEventListener('click', function() {
@@ -38,7 +55,6 @@ btnRoll.addEventListener('click', function() {
     diceEl.classList.remove('hidden');
     diceEl.src = `/images/dice-${dice}.png`;
    
-
     if(dice !== 1){
         currentScore += dice;
         document.getElementById(`current-${activePlayer}`).textContent = currentScore
@@ -53,10 +69,8 @@ btnHold.addEventListener('click', function() {
     if (playing) {
     scoreTracker[activePlayer] += currentScore;
     document.getElementById(`score-${activePlayer}`).textContent = scoreTracker[activePlayer]
-
-    
-
-    if (scoreTracker[activePlayer] >= 10) {
+ 
+    if (scoreTracker[activePlayer] >= 100) {
         playing = false;
         diceEl.classList.add('hidden')
         document.querySelector(`.player-${activePlayer}`).classList.add('player-winner')
@@ -66,3 +80,6 @@ btnHold.addEventListener('click', function() {
     }
     }
 })
+
+//New Game
+btnNew.addEventListener('click', resetGame)
