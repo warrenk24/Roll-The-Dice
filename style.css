@@ -25,7 +25,7 @@ html {
 }
 body {
   font-family: "Nunito", sans-serif;
-  font-weight: 400;
+  font-weight: var(--fw-m);
   height: 100vh;
   color: #333;
   background-image: var(--bg-clr);
@@ -72,7 +72,7 @@ main {
 
 .score {
   font-size: 8rem;
-  font-weight: 300;
+  font-weight: var(--fw-n);
   color: var(--primary-clr);
   margin-bottom: auto;
 }
@@ -81,10 +81,10 @@ main {
     background: var(--active-player-clr);
   }
   .player-active .name {
-    font-weight: 700;
+    font-weight: var(--fw-b);
   }
   .player-active .score {
-    font-weight: 400;
+    font-weight: var(--fw-m);
   }
   
   .player-active .current {
@@ -125,7 +125,7 @@ main {
     font-size: 1.8rem;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: 400;
+    font-weight: var(--fw-m);
     transition: all 0.2s;
   
     background-color: white;
@@ -176,7 +176,11 @@ main {
   }
   
   .player-winner .name {
-    font-weight: 700;
+    font-weight: var(--fw-b);
     color: var(--primary-clr);
+  }
+
+  .hidden {
+    display: none;
   }
   
