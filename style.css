@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --bg-clr: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+    --secondary-bg-clr: rgba(255, 255, 255, 0.35);
+    --active-player-clr: rgba(255, 255, 255, 0.4);
+    --primary-clr: #c7365f
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    
+}
